@@ -1,13 +1,21 @@
 const express = require("express")
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
-
+const data = require("./routes/data")
 const app = express()
-dotenv.config();
 
+
+//middleware
+app.use(express.json())
+
+app.use("/",data)
+
+// dotenv config
+dotenv.config();
+// PORT
 const PORT = process.env.PORT 
 
-
+// CONNECTED DATABASE
 mongoose.connect(process.env.MONGO_URL )
     .then(()=>{
         console.log("connected to Database");
@@ -20,7 +28,7 @@ mongoose.connect(process.env.MONGO_URL )
 
 
 
-
+//listening to port
 app.listen(PORT,()=>{
     console.log("server connected in Port "+PORT)
 })
