@@ -21,7 +21,7 @@ const RecipeSchema = new mongoose.Schema({
     },
     image: {
         type: Buffer,
-        required: true
+        
      },
     
     createdAt: {
