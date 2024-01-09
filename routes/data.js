@@ -1,26 +1,58 @@
 const express = require("express")
 const Recipe = require("../models/schema")
+const multer = require('multer');
 
+
+const stockage = multer.diskStorage({
+    destination : 'uploads',
+    filename : (req,res,cb) => {
+      cb(null,Date.now(file.originalname))
+    }
+
+})
+
+const upload = multer({stockage : stockage}).single("image");
 
 const app = express.Router()
 
 // CREATE METHOD 
 app.post("/recipe",(req,res)=>{
-   const NewRecipe = new Recipe ({
-    name : req.body.name,
-    dishType : req.body.dishType,
-    ingrediants : req.body.ingrediants,
-    inscructions : req.body.inscructions,
-    image : req.body.image
-   })
-   NewRecipe.save()
-   .then(()=>{
-    res.status(201).json({message: 'Recipe created successfully'})
-   })
-   .catch((error)=>{
-    res.status(500).json({error: 'Failed to create Recipe'})
-    console.log(error)
-   })
+  upload(req,res,(err)=>{
+    if (err) {
+      console.log(err)
+    }
+    else {
+      const NewRecipe = new Recipe ({
+        name : req.body.name,
+        dishType : req.body.dishType,
+        ingrediants : req.body.ingrediants,
+        inscructions : req.body.inscructions,
+        image : {
+          data : req.body.filename,
+          contentType : "image/png"
+
+        } 
+        
+   })  
+     
+    NewRecipe.save()
+    .then(()=>{
+      res.status(201).json({message: 'Recipe created successfully'})
+     })
+     .catch((error)=>{
+      res.status(500).json({error: 'Failed to create Recipe'})
+      console.log(error)
+     })
+    }
+  })
+  
+     
+      
+  
+ 
+   
+   
+  
 })
 
 // READ METHOD 
