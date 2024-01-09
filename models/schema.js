@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+    
 
 const RecipeSchema = new mongoose.Schema({
     name : {
@@ -20,7 +21,8 @@ const RecipeSchema = new mongoose.Schema({
         required: true
     },
     image: {
-        type: Buffer,
+        data: Buffer,
+        contentType: String
         
      },
     
