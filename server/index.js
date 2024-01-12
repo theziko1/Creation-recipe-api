@@ -2,12 +2,16 @@ const express = require("express")
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const data = require("./routes/data")
+const cors = require('cors')
+const path = require('path')
 const app = express()
 
 
 //middleware
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));  
+app.use(cors()) 
 app.use("/",data)
 
 // dotenv config
