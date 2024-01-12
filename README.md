@@ -6,12 +6,12 @@ Ce projet est une API construite avec Express.js pour la gestion des données da
 
 1. **Cloner le projet :**
    ```bash
-   git clone https://github.com/votre-utilisateur/express-mongodb-multer-api.git
-   cd express-mongodb-multer-api
+   git clone [https://github.com/votre-utilisateur/express-mongodb-multer-api.git
+   cd express-mongodb-multer-api](https://github.com/theziko1/Creation-recipe-api)
 Installer les dépendances :
 
-bash
-Copy code
+
+ ```bash
 npm install
 Configurer la base de données MongoDB :
 
@@ -22,20 +22,21 @@ Créez un fichier .env à la racine du projet et définissez les variables d'env
 Exécution de l'application
 Démarrer l'application :
 
-bash
-Copy code
+ ```bash
+
 npm start
-L'API sera accessible à l'adresse http://localhost:3000.
+L'API sera accessible à l'adresse http://localhost:5000.
 
 Tester l'API :
 
 Utilisez des outils comme Postman ou cURL pour tester les différentes routes de l'API.
 Routes de l'API
-GET /recipes: Récupérer toutes les recettes.
-GET /recipes/:id: Récupérer une recette par ID.
-POST /recipes: Ajouter une nouvelle recette avec une image (utilisation de Multer).
-PUT /recipes/:id: Mettre à jour une recette par ID.
-DELETE /recipes/:id: Supprimer une recette par ID.
+GET /recipe: Récupérer toutes les recettes.
+GET /recipe/:id: Récupérer une recette par ID.
+GET /recipe/:dishType: Récupérer une recette par sa type.
+POST /recipe: Ajouter une nouvelle recette avec une image (utilisation de Multer).
+PUT /recipe/:id: Mettre à jour une recette par ID.
+DELETE /recipe/:id: Supprimer une recette par ID.
 Contribuer
 Si vous souhaitez contribuer à ce projet, suivez ces étapes :
 
@@ -45,5 +46,5 @@ Commit de vos modifications (git commit -am 'Ajout d'une nouvelle fonctionnalit�
 Push de la branche (git push origin feature/ma-fonctionnalite)
 Créez une nouvelle Pull Request
 Licence
-Ce projet est sous licence MIT.
+Ce projet est sous licence theZiko1.
 
