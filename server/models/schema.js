@@ -1,10 +1,17 @@
 const mongoose = require("mongoose")
-    
+const { v4: uuidv4 } = require('uuid');
+       
 
 const RecipeSchema = new mongoose.Schema({
+    id: {
+        type: String,
+        default: uuidv4,
+        unique: true,
+      },
     name : {
         type: String,
-        required: true
+        required: true,
+        unique : true,
     },
     dishType : {
         type: String,
@@ -20,12 +27,10 @@ const RecipeSchema = new mongoose.Schema({
         default: [],
         required: true
     },
-    image: {
-        data: Buffer,
-        contentType: String
-        
-     },
-    
+    image:  {
+        type: String,
+    },
+
     createdAt: {
         type: Date,
         default: Date.now
