@@ -13,6 +13,7 @@ Installer les dépendances :
 
  ```bash
 npm install
+ ```
 Configurer la base de données MongoDB :
 
 Assurez-vous que MongoDB est installé localement ou configurez l'URL de votre base de données dans le fichier config/db.js.
