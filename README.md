@@ -15,6 +15,7 @@ npm install
 3. **Configurer la base de données MongoDB :**
 
 Assurez-vous que MongoDB est installé localement ou configurez l'URL de votre base de données dans le fichier index.js.
+
 4.**Configurer les variables d'environnement :**
 
 Créez un fichier .env à la racine du projet et définissez les variables d'environnement nécessaires. Vous pouvez utiliser le fichier .env.example comme modèle.
