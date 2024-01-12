@@ -1,59 +1,49 @@
-# Project Title
+# Projet API avec Express.js, MongoDB (Mongoose) et Multer
 
-A short description about the project and/or client.
+Ce projet est une API construite avec Express.js pour la gestion des données dans une base de données MongoDB à l'aide de Mongoose. Il utilise également Multer pour la gestion des fichiers, notamment pour le téléchargement d'images.
 
-## Getting Started
+## Configuration et Installation
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. **Cloner le projet :**
+   ```bash
+   git clone https://github.com/votre-utilisateur/express-mongodb-multer-api.git
+   cd express-mongodb-multer-api
+Installer les dépendances :
 
-### Prerequisites
+bash
+Copy code
+npm install
+Configurer la base de données MongoDB :
 
-The things you need before installing the software.
+Assurez-vous que MongoDB est installé localement ou configurez l'URL de votre base de données dans le fichier config/db.js.
+Configurer les variables d'environnement :
 
-* You need this
-* And you need this
-* Oh, and don't forget this
+Créez un fichier .env à la racine du projet et définissez les variables d'environnement nécessaires. Vous pouvez utiliser le fichier .env.example comme modèle.
+Exécution de l'application
+Démarrer l'application :
 
-### Installation
+bash
+Copy code
+npm start
+L'API sera accessible à l'adresse http://localhost:3000.
 
-A step by step guide that will tell you how to get the development environment up and running.
+Tester l'API :
 
-```
-$ First step
-$ Another step
-$ Final step
-```
+Utilisez des outils comme Postman ou cURL pour tester les différentes routes de l'API.
+Routes de l'API
+GET /recipes: Récupérer toutes les recettes.
+GET /recipes/:id: Récupérer une recette par ID.
+POST /recipes: Ajouter une nouvelle recette avec une image (utilisation de Multer).
+PUT /recipes/:id: Mettre à jour une recette par ID.
+DELETE /recipes/:id: Supprimer une recette par ID.
+Contribuer
+Si vous souhaitez contribuer à ce projet, suivez ces étapes :
 
-## Usage
+Fork du projet
+Créez une branche pour votre fonctionnalité (git checkout -b feature/ma-fonctionnalite)
+Commit de vos modifications (git commit -am 'Ajout d'une nouvelle fonctionnalité')
+Push de la branche (git push origin feature/ma-fonctionnalite)
+Créez une nouvelle Pull Request
+Licence
+Ce projet est sous licence MIT.
 
-A few examples of useful commands and/or tasks.
-
-```
-$ First example
-$ Second example
-$ And keep this in mind
-```
-
-## Deployment
-
-Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
-
-### Server
-
-* Live:
-* Release:
-* Development:
-
-### Branches
-
-* Master:
-* Feature:
-* Bugfix:
-* etc...
-
-## Additional Documentation and Acknowledgments
-
-* Project folder on server:
-* Confluence link:
-* Asana board:
-* etc...
